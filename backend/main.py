@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import os
+from PyPDF2 import PdfReader
 from openai import OpenAI
 from dotenv import load_dotenv
 load_dotenv()
@@ -34,6 +35,15 @@ app.add_middleware(
     allow_headers = ["*"],
 )
 
+reader = PdfReader("test.pdf")
+pages = reader.pages
+text = ""
+
+for page in pages:
+    sub = page.extract_text()
+    text += sub
+
+print(text)
 
 
 @app.get('/')
