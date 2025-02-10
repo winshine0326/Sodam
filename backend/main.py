@@ -5,11 +5,11 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-from langchain.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
-from langchain.chains import LLMChain
+from langchain.schema.runnable import RunnableSequence
 
 app = FastAPI()
 
@@ -47,9 +47,11 @@ map_template = """다음은 문서 중 일부 내용입니다
 
 map_prompt = PromptTemplate.from_template(map_template)
 
-llm = ChatOpenAI(temperature=0, 
-                 model_name='gpt-3.5-turbo-16k')
-map_chain = LLMChain(llm=llm, prompt=map_prompt)
+llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
+map_chain = RunnableSequence(map_prompt | llm)
+
+print(map_chain.invoke({"pages": "some text"}))
+
 
 @app.get('/')
 def show_novel():
