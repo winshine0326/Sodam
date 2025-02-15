@@ -42,7 +42,7 @@ text_splitter = CharacterTextSplitter.from_tiktoken_encoder(
 )
 
 split_docs = text_splitter.split_documents(documents)
-print(len(split_docs))
+# print(len(split_docs))
 
 # Map 단계
 map_template = """다음은 문서 중 일부 내용입니다:
@@ -64,7 +64,7 @@ map_chain = (map_prompt | llm | RunnableLambda(extract_content))
 # Reduce 단계
 reduce_template = """다음은 요약의 집합입니다:
 {doc_summaries}
-이것들을 바탕으로 통합된 요약을 만들어 주세요.
+이것들을 바탕으로 통합된 요약을 만들어 그걸 바탕으로 사용자가 읽고 공부 내용을 학습할 학습용 소설을 써주세요.
 답변:"""
 reduce_prompt = PromptTemplate.from_template(reduce_template)
 
