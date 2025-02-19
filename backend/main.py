@@ -10,6 +10,7 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 from langchain.schema.runnable import RunnableLambda
+from langchain.callbacks import get_openai_callback
 
 app = FastAPI()
 
@@ -32,8 +33,6 @@ app.add_middleware(
 loader = PyMuPDFLoader("./test.pdf")
 documents = loader.load()
 
-# print(documents[1].page_content[:200])
-
 # 문서 분할 
 text_splitter = CharacterTextSplitter.from_tiktoken_encoder(
     separator="\n\n",
@@ -42,7 +41,6 @@ text_splitter = CharacterTextSplitter.from_tiktoken_encoder(
 )
 
 split_docs = text_splitter.split_documents(documents)
-# print(len(split_docs))
 
 # Map 단계
 map_template = """다음은 문서 중 일부 내용입니다:
@@ -58,9 +56,6 @@ def extract_content(response):
 
 map_chain = (map_prompt | llm | RunnableLambda(extract_content))
 
-# response = map_chain.invoke({"page_content": documents[1].page_content[:200]})
-# print(response)
-
 # Reduce 단계
 reduce_template = """다음은 요약의 집합입니다:
 {doc_summaries}
@@ -72,12 +67,16 @@ reduce_chain = (reduce_prompt | llm | RunnableLambda(extract_content))
 
 # Map-Reduce
 def map_reduce(documents):
-    # Map 단계: 각 페이지 요약
-    summaries = [map_chain.invoke({"page_content": doc.page_content[:500]}) for doc in documents]
-
-    # Reduce 단계: 각 페이지 합쳐서 최종 요약
-    final_summary = reduce_chain.invoke({"doc_summaries": "\n\n".join(summaries)})
-
+    with get_openai_callback() as cb:
+        # Map 단계: 각 페이지 요약
+        summaries = [map_chain.invoke({"page_content": doc.page_content[:500]}) for doc in documents]
+        
+        # Reduce 단계: 각 페이지 합쳐서 최종 요약
+        final_summary = reduce_chain.invoke({"doc_summaries": "\n\n".join(summaries)})
+        
+        # 토큰 사용량 출력
+        print(f"🔹 총 요청 토큰: {cb.prompt_tokens}, 총 응답 토큰: {cb.completion_tokens}, 총 사용 토큰: {cb.total_tokens}")
+    
     return final_summary
 
 summary = map_reduce(documents)
