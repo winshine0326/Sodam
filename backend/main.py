@@ -36,20 +36,19 @@ documents = loader.load()
 # 문서 분할 
 text_splitter = CharacterTextSplitter.from_tiktoken_encoder(
     separator="\n\n",
-    chunk_size=3000,
+    chunk_size=4000,
     chunk_overlap=500,
 )
 
 split_docs = text_splitter.split_documents(documents)
 
 # Map 단계
-map_template = """다음은 문서 중 일부 내용입니다:
+map_template = """다음 문서를 200자 이내로 요약하세요:
 {page_content}
-이 문서 목록을 기반으로 주요 내용을 요약해 주세요.
-답변:"""
+요약:"""
 map_prompt = PromptTemplate.from_template(map_template)
 
-llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
+llm = ChatOpenAI(model_name="gpt-3.5-turbo-1106", temperature=0)
 
 def extract_content(response):
     return response.content
@@ -57,10 +56,9 @@ def extract_content(response):
 map_chain = (map_prompt | llm | RunnableLambda(extract_content))
 
 # Reduce 단계
-reduce_template = """다음은 요약의 집합입니다:
+reduce_template = """다음 내용을 바탕으로 소설을 1000자 이내로 만드세요:
 {doc_summaries}
-이것들을 바탕으로 통합된 요약을 만들어 그걸 바탕으로 사용자가 읽고 공부 내용을 학습할 학습용 소설을 써주세요.
-답변:"""
+소설:"""
 reduce_prompt = PromptTemplate.from_template(reduce_template)
 
 reduce_chain = (reduce_prompt | llm | RunnableLambda(extract_content))
@@ -71,7 +69,7 @@ def map_reduce(documents):
         # Map 단계: 각 페이지 요약
         summaries = [map_chain.invoke({"page_content": doc.page_content[:500]}) for doc in documents]
         
-        # Reduce 단계: 각 페이지 합쳐서 최종 요약
+        # Reduce 단계: 바로 소설 생성
         final_summary = reduce_chain.invoke({"doc_summaries": "\n\n".join(summaries)})
         
         # 토큰 사용량 출력
