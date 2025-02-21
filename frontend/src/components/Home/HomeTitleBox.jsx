@@ -6,8 +6,8 @@ const HomeTitleBox = () => {
     const [visible2, setVisible2] = useState(false);
 
     useEffect(() => {
-        const timer1 = setTimeout(() => setVisible1(true), 2000);
-        const timer2 = setTimeout(() => setVisible2(true), 2500);
+        const timer1 = setTimeout(() => setVisible1(true), 500);
+        const timer2 = setTimeout(() => setVisible2(true), 1000);
         return () => {clearTimeout(timer1),clearTimeout(timer2)};
     }, []);
 
