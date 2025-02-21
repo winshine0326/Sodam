@@ -114,4 +114,5 @@ a {
 
 .homeGoToStoryBtn:hover{
     background-color: #2c3e5bc5;
+    cursor: pointer;
 }
