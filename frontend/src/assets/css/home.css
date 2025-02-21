@@ -39,6 +39,10 @@ a {
 }
 
 .homeNavMenu li {
+    font-size: large;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     padding: 8px 12px;
 }
 
@@ -46,4 +50,9 @@ a {
     color: #ffffff;
     background-color: #a2b4c08f;
     border-radius: 4px;
+}
+
+.homeNavMenu li > img{
+    
+    width: 30px;
 }
