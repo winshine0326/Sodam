@@ -17,8 +17,8 @@ const Home = () => {
                                 <li><a href="">Home</a></li>
                                 <li><a href="">Create Stories</a></li>
                                 <li>|</li>
-                                <a href="https://tested-arrow-f94.notion.site/Sodam-196b7a0a13588054bcb0c7f83d5341da?pvs=4"><li><img src={notionIcon}/>Notion</li></a>
-                                <a href="https://github.com/winshine0326/Sodam"><li><img src={githubIcon}/>Github</li></a>
+                                <a href="https://tested-arrow-f94.notion.site/Sodam-196b7a0a13588054bcb0c7f83d5341da?pvs=4"><li><img src={notionIcon}/></li></a>
+                                <a href="https://github.com/winshine0326/Sodam"><li><img src={githubIcon}/></li></a>
                             </ul>
                         </nav>
                         <h1>main</h1>
