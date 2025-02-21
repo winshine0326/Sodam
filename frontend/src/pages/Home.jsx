@@ -1,4 +1,5 @@
 import React from 'react';
+import '../assets/css/home.css';
 
 const Home = ()=>{
     return(
@@ -12,8 +13,10 @@ const Home = ()=>{
                 <a>Github</a>
             </nav>
         </header>
-        <main>
-            <h1>main</h1>
+        <main className='homeMain'>
+            <div className='homeMainEffect'>
+                <h1>main</h1>
+            </div>
         </main>
         <footer>
 
