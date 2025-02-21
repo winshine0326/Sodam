@@ -10,10 +10,10 @@ const Home = () => {
             <div className='homeContainer'>
                 <main className='homeMain'>
                     <div className='homeMainEffect'>
+                    </div>
                         <HomeNav/>
                         <HomeTitleBox/>
                         <HomeGoToStoryBtn/>
-                    </div>
                 </main>
                 <footer>
 
