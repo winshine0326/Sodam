@@ -2,6 +2,7 @@ import React from 'react';
 import '../assets/css/home.css';
 import HomeNav from '../components/Home/HomeNav.jsx';
 import HomeTitleBox from '../components/Home/HomeTitleBox.jsx';
+import HomeGoToStoryBtn from '../components/Home/HomeGoToStoryBtn.jsx';
 
 const Home = () => {
     return (
@@ -11,7 +12,7 @@ const Home = () => {
                     <div className='homeMainEffect'>
                         <HomeNav/>
                         <HomeTitleBox/>
-                        <a><button className="homeGoToStoryBtn">이야기 작성하기</button></a>
+                        <HomeGoToStoryBtn/>
                     </div>
                 </main>
                 <footer>
