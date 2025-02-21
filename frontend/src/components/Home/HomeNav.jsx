@@ -1,23 +1,11 @@
 import '../../assets/css/home.css';
 import notionIcon from '../../assets/images/notionIcon.png';
 import githubIcon from '../../assets/images/githubIcon.svg';
-import { useState, useEffect } from 'react';
 
 
 const HomeNav = () => {
-    const [visible, setVisible] = useState(false);
-
-    useEffect(() => {
-        const timer = setTimeout(() => setVisible(true), 2000);
-        return () => clearTimeout(timer);
-    }, []);
-
     return (
-        <nav className='homeNav' style={{
-            opacity: visible ? 1 : 0,
-            transform: visible ? "translateY(0)" : "translateY(20px)",
-            transition: "opacity 0.6s ease-out, transform 0.6s ease-out"
-        }}>
+        <nav className='homeNav'>
             <div class="homeNavLogo">
                 <a href="">소담</a>
             </div>
