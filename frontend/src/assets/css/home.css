@@ -19,6 +19,7 @@
 
 body {
     background-color: #10112c;
+    margin:0;
 }
 
 a {
@@ -32,6 +33,7 @@ a {
     align-items: center;
     padding: 8px 10vw;
     color: #ffffff;
+    background-color: #0000009b;
 }
 
 .homeNavMenu {
