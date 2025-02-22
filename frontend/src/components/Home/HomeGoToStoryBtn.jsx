@@ -1,5 +1,6 @@
 import '../../assets/css/home.css';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const HomeGoToStoryBtn = () =>{
     const [visible, setVisible] = useState(false);
@@ -10,11 +11,13 @@ const HomeGoToStoryBtn = () =>{
     }, []);
     
     return(
-        <a style={{
-            opacity: visible ? 1 : 0,
-            transform: visible ? "translateY(0)" : "translateY(20px)",
-            transition: "opacity 0.5s ease-out, transform 0.5s ease-out",
-        }}><button className="homeGoToStoryBtn">이야기 작성하기</button></a>
+        <Link to='/upload'>
+            <button className="homeGoToStoryBtn" style={{
+                opacity: visible ? 1 : 0,
+                transform: visible ? "translateY(0)" : "translateY(20px)",
+                transition: "opacity 0.5s ease-out, transform 0.5s ease-out",
+            }}>이야기 작성하기</button>
+        </Link>
     )
 }
 
