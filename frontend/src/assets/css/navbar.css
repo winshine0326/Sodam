@@ -1,0 +1,45 @@
+@import "./fonts.css";
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10vw;
+    color: #ffffff;
+    background-color: #0000009b;
+}
+
+.navMenu {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    z-index: 999;
+}
+
+.navMenu li {
+    font-family: "WarhavenL";
+    font-size: large;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    z-index: 999;
+}
+
+.navMenu li:not(:nth-child(3)):hover {
+    color: #ffffff;
+    background-color: #a2b4c08f;
+    border-radius: 4px;
+    z-index: 999;
+}
+
+.navMenu li > img{
+    width: 30px;
+}
+
+.navLogo {
+    font-family: "WarhavenB";
+    font-size: xx-large;
+    font-weight: 400;
+    z-index: 999;
+}

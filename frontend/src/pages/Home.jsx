@@ -1,6 +1,6 @@
 import React from 'react';
 import '../assets/css/home.css';
-import HomeNav from '../components/Home/HomeNav.jsx';
+import Navbar from '../components/Global/Navbar.jsx';
 import HomeTitleBox from '../components/Home/HomeTitleBox.jsx';
 import HomeGoToStoryBtn from '../components/Home/HomeGoToStoryBtn.jsx';
 
@@ -11,7 +11,7 @@ const Home = () => {
                 <main className='homeMain'>
                     <div className='homeMainEffect'>
                     </div>
-                    <HomeNav />
+                    <Navbar />
                     <HomeTitleBox />
                     <HomeGoToStoryBtn />
                 </main>

@@ -29,51 +29,6 @@ a {
     color: var(--text-color);
 }
 
-.homeNav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 10vw;
-    color: #ffffff;
-    background-color: #0000009b;
-}
-
-.homeNavMenu {
-    display: flex;
-    list-style: none;
-    padding-left: 0;
-    z-index: 999;
-}
-
-.homeNavMenu li {
-    font-family: "WarhavenL";
-    font-size: large;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    z-index: 999;
-}
-
-.homeNavMenu li:not(:nth-child(3)):hover {
-    color: #ffffff;
-    background-color: #a2b4c08f;
-    border-radius: 4px;
-    z-index: 999;
-}
-
-.homeNavMenu li > img{
-    width: 30px;
-}
-
-.homeNavLogo {
-    font-family: "WarhavenB";
-    font-size: xx-large;
-    font-weight: 400;
-    z-index: 999;
-}
-
-
 .homeTitleBox{
     width: 100%;
     height: fit-content;

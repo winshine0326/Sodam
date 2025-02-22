@@ -1,4 +1,4 @@
-import '../../assets/css/home.css';
+import '../../assets/css/navbar.css';
 import notionIcon from '../../assets/images/notionIcon.png';
 import githubIcon from '../../assets/images/githubIcon.svg';
 import { Link } from 'react-router-dom';
@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 
 const HomeNav = () => {
     return (
-        <nav className='homeNav'>
-            <div className="homeNavLogo">
+        <nav className='nav'>
+            <div className="navLogo">
                 <a href="">소담</a>
             </div>
-            <ul className="homeNavMenu">
+            <ul className="navMenu">
                 <li><Link to='/'>홈</Link></li>
                 <li><Link to='/upload'>이야기 쓰기</Link></li>
                 <li>|</li>
