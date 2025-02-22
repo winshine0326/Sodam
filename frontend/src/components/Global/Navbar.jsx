@@ -8,8 +8,7 @@ const HomeNav = () => {
     return (
         <nav className='nav'>
             <div className="navLogo">
-                <img src={sodamLogo}/>
-                <a href="">소담</a>
+                <a href=""><img src={sodamLogo}/></a>
             </div>
             <ul className="navMenu">
                 <li><Link to='/'>홈</Link></li>
