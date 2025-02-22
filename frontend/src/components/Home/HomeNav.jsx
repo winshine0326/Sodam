@@ -6,10 +6,10 @@ import githubIcon from '../../assets/images/githubIcon.svg';
 const HomeNav = () => {
     return (
         <nav className='homeNav'>
-            <div class="homeNavLogo">
+            <div className="homeNavLogo">
                 <a href="">소담</a>
             </div>
-            <ul class="homeNavMenu">
+            <ul className="homeNavMenu">
                 <li><a href="">홈</a></li>
                 <li><a href="">이야기 쓰기</a></li>
                 <li>|</li>

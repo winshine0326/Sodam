@@ -1,10 +1,9 @@
-import Upload from './pages/Upload';
-import Home from './pages/Home';
+import Router from './Router';
 
 function App() {
   return (
-    <Home/>
+    <Router />
   )
 }
 
-export default App
+export default App;
