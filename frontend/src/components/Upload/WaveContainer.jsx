@@ -22,7 +22,7 @@ const WaveContainer = () => {
             {file && (
                     <div className='selectedFile'>
                         <p>선택된 파일: {file.name}</p>
-                        {/* <button onClick={handleSubmit}>제출</button> */}
+                        {/* <button>제출</button> */}
                     </div>
             )}
         </>
