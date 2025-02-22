@@ -1,0 +1,67 @@
+.wave-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 20% auto;
+}
+
+.circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid #5257b880;
+    animation: wave 1.8s infinite ease-out;
+  }
+  
+  .circle:nth-child(2) {
+    animation-delay: 0.6s;
+    border-color: #6a6fd999;
+  }
+  
+  .circle:nth-child(3) {
+    animation-delay: 1.2s;
+    border-color: #8288fa66;
+}
+
+@keyframes wave {
+    0% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(2.3);
+      opacity: 0;
+    }
+  }
+
+#file-input {
+    display: none;
+}
+
+.upload-label {
+    background: linear-gradient(135deg, #3A3E80, #5257B8);
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+    box-shadow: 0px 4px 10px #5257b866;
+}
+
+.upload-label:hover {
+    background: linear-gradient(135deg, #5257B8, #6A6FD9);
+    box-shadow: 0px 6px 15px #6a6fd999;
+}

@@ -20,8 +20,10 @@
 }
 
 body {
-    background-color: #10112c;
+    background: linear-gradient(135deg, #0C0D26, #1A1C48, #2A2D60);
     margin:0;
+    width: 100vw;
+    height: 100vh;
 }
 
 a {
