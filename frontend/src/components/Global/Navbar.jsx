@@ -2,12 +2,13 @@ import '../../assets/css/navbar.css';
 import notionIcon from '../../assets/images/notionIcon.png';
 import githubIcon from '../../assets/images/githubIcon.svg';
 import { Link } from 'react-router-dom';
-
+import sodamLogo from '../../assets/images/sodamLogo.png';
 
 const HomeNav = () => {
     return (
         <nav className='nav'>
             <div className="navLogo">
+                <img src={sodamLogo}/>
                 <a href="">소담</a>
             </div>
             <ul className="navMenu">

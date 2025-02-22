@@ -38,8 +38,15 @@
 }
 
 .navLogo {
+    display: flex;
+    align-items: center;
     font-family: "WarhavenB";
     font-size: xx-large;
     font-weight: 400;
     z-index: 999;
+}
+
+.navLogo > img{
+    width: 50px;
+    height: 50px;
 }
