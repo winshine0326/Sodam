@@ -2,10 +2,10 @@ import '../../assets/css/upload.css';
 import sodamLogo from '../../assets/images/sodamLogo.png';
 
 
-const UploadButtonBefore = ()=>{
+const UploadButtonBefore = ({ props })=>{
     const handleFile = (e) => {
         const selectedFile = e.target.files[0];
-        setFile(selectedFile);
+        props(selectedFile);
     }
     return (
         <div className="wave-container">

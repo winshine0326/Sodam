@@ -6,14 +6,13 @@ import UploadButtonAfter from './UploadButtonAfter.jsx';
 const UploadContainer = () => {
     const [file, setFile] = useState();
 
-    const handleFile = (e) => {
-        const selectedFile = e.target.files[0];
-        setFile(selectedFile);
-    }
+    const propsFunc = (data) => {
+        setFile(data);
+      };
 
     return (
         <>
-            <UploadButtonAfter/>
+            {file ? <UploadButtonAfter/> : <UploadButtonBefore props={propsFunc} />}
             {file && (
                     <div className='selectedFile'>
                         <p>선택된 파일: {file.name}</p>
