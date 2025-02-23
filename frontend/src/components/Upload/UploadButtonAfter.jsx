@@ -1,8 +1,9 @@
 import '../../assets/css/upload.css';
 import sodamLogo from '../../assets/images/sodamLogo.png';
+import { useEffect } from 'react';
 
 
-const UploadButtonAfter = ()=>{
+const UploadButtonAfter = ({ props })=>{
     const handleFile = (e) => {
         const selectedFile = e.target.files[0];
         setFile(selectedFile);
