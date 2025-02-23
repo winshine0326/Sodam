@@ -2,7 +2,7 @@ import '../../assets/css/upload.css';
 import sodamLogo from '../../assets/images/sodamLogo.png';
 import { useState } from 'react';
 
-const WaveContainer = () => {
+const UploadContainer = () => {
     const [file, setFile] = useState();
 
     const handleFile = (e) => {
@@ -22,11 +22,13 @@ const WaveContainer = () => {
             {file && (
                     <div className='selectedFile'>
                         <p>선택된 파일: {file.name}</p>
-                        {/* <button>제출</button> */}
                     </div>
             )}
+            {/* {file && (
+                <button className='submitFile'>제출</button>
+            )} */}
         </>
     )
 }
 
-export default WaveContainer;
+export default UploadContainer;
