@@ -1,6 +1,6 @@
 @import url('../css/fonts.css');
 
-.wave-containerB {
+.wave-container {
     position: relative;
     width: 200px;
     height: 200px;
@@ -122,4 +122,53 @@
     background-color: #5172a7c5;
     font-family: "WarhavenB";
     filter: drop-shadow(10px 10px 15px #000000);
+}
+
+
+.circleA {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid #4FD1C580;
+    animation: wave 1.8s infinite ease-out;
+}
+
+.circleA:nth-child(2) {
+    animation-delay: 0.6s;
+    border-color: #5FE3D999;
+}
+
+.circleA:nth-child(3) {
+    animation-delay: 1.2s;
+    border-color: #81E6D966;
+}
+
+.upload-labelA {
+    background: linear-gradient(135deg, #2E736F, #4FD1C5);
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+    box-shadow: 0px 4px 10px #4FD1C580;
+}
+
+.upload-labelA:hover {
+    background: linear-gradient(135deg, #4FD1C5, #5FE3D9);
+    box-shadow: 0px 6px 15px #5FE3D999;
+}
+
+.upload-labelA>img {
+    width: 150px;
+    height: 150px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
 }

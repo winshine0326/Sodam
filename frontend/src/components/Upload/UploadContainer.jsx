@@ -1,7 +1,7 @@
 import '../../assets/css/upload.css';
-import sodamLogo from '../../assets/images/sodamLogo.png';
 import { useState } from 'react';
 import UploadButtonBefore from './UploadButtonBefore.jsx';
+import UploadButtonAfter from './UploadButtonAfter.jsx';
 
 const UploadContainer = () => {
     const [file, setFile] = useState();
@@ -13,7 +13,7 @@ const UploadContainer = () => {
 
     return (
         <>
-            <UploadButtonBefore/>
+            <UploadButtonAfter/>
             {file && (
                     <div className='selectedFile'>
                         <p>선택된 파일: {file.name}</p>

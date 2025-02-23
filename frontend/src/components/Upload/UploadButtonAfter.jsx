@@ -8,7 +8,7 @@ const UploadButtonAfter = ()=>{
         setFile(selectedFile);
     }
     return (
-        <div className="wave-containerA">
+        <div className="wave-container">
                 <input type="file" id="file-input" accept=".pdf" multiple onChange={handleFile} />
                 <label htmlFor="file-input" className="upload-labelA"><img src={sodamLogo} /></label>
                 <div className="circleA"></div>
