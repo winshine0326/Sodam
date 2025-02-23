@@ -1,6 +1,7 @@
 import '../../assets/css/upload.css';
 import sodamLogo from '../../assets/images/sodamLogo.png';
 import { useState } from 'react';
+import UploadButtonBefore from './UploadButtonBefore.jsx';
 
 const UploadContainer = () => {
     const [file, setFile] = useState();
@@ -12,13 +13,7 @@ const UploadContainer = () => {
 
     return (
         <>
-            <div className="wave-container">
-                <input type="file" id="file-input" accept=".pdf" multiple onChange={handleFile} />
-                <label htmlFor="file-input" className="upload-label"><img src={sodamLogo} /></label>
-                <div className="circle"></div>
-                <div className="circle"></div>
-                <div className="circle"></div>
-            </div>
+            <UploadButtonBefore/>
             {file && (
                     <div className='selectedFile'>
                         <p>선택된 파일: {file.name}</p>
