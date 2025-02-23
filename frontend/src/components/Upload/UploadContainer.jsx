@@ -12,7 +12,7 @@ const UploadContainer = () => {
 
     return (
         <>
-            {file ? <UploadButtonAfter props={file}/> : <UploadButtonBefore props={propsFunc} />}
+            {file ? <UploadButtonAfter file={file}/> : <UploadButtonBefore props={propsFunc} />}
             {file && (
                     <div className='selectedFile'>
                         <p>선택된 파일: {file.name}</p>

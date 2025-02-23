@@ -3,7 +3,7 @@ import sodamLogo from '../../assets/images/sodamLogo.png';
 import { useEffect } from 'react';
 
 
-const UploadButtonAfter = ({ props })=>{
+const UploadButtonAfter = ({ file })=>{
     const handleFile = (e) => {
         const selectedFile = e.target.files[0];
         setFile(selectedFile);
