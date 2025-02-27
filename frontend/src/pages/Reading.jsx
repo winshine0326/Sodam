@@ -1,4 +1,4 @@
-import Loading from './Loading.jsx';
+import Loading from '../components/Reading/Loading';
 
 const Reading = ()=>{
     return(
