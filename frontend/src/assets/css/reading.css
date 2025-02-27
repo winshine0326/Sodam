@@ -19,7 +19,7 @@ body{
 }
 
 .loadingContainer h1{
-    color:rgba(255, 255, 255, 0.757);
+    color:#ffffffc1;
     font-size: larger;
 }
 
@@ -28,7 +28,7 @@ body{
     width: 500px;
     height: 500px;
     text-align: center;
-    font-family: "WarhavenL";
+    font-family: "WarhavenB";
 }
 
 .loadingMain img {
@@ -40,3 +40,31 @@ body{
     -moz-user-drag: none;
     -o-user-drag: none;
 }
+
+.wrapper {
+    height: 10vh;
+    display: grid;
+    place-items: center;
+  }
+  
+.typing-demo {
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-size: 2em;
+    
+    animation: typing 6s steps(19) infinite, 
+               blink .8s step-end infinite;
+  }
+  
+@keyframes typing {
+    0% { width: 0; }
+    30% { width: 19ch; }
+    100% { width: 19ch; } 
+  }
+  
+@keyframes blink {
+    50% { border-color: transparent; }
+  }
+  

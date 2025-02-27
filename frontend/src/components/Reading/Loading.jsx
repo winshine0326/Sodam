@@ -7,7 +7,9 @@ const Loading = ()=>{
         <div className="loadingContainer">
             <div className='loadingMain'>
                 <img src={lodingGirl}/>
-                <h1>열심히 소설을 작성 중입니다....</h1>
+                <div className='wrapper'>
+                    <h1 className='typing-demo'>열심히 소설을 작성 중입니다...</h1>
+                </div>
             </div>
         </div>
         </>
