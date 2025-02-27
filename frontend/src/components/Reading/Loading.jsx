@@ -1,5 +1,5 @@
 import '../../assets/css/reading.css';
-import lodingGirl from '../../assets/images/lodingGirl.png';
+import lodingGirl from '../../assets/images/loadingGirl.png';
 
 const Loading = ()=>{
     return(
