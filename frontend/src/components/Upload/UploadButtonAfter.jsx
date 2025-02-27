@@ -1,6 +1,5 @@
 import '../../assets/css/upload.css';
 import sodamLogo from '../../assets/images/sodamLogo.png';
-import { useEffect } from 'react';
 
 
 const UploadButtonAfter = ({ file })=>{

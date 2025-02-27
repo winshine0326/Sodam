@@ -12,7 +12,7 @@ from langchain_openai import ChatOpenAI
 from langchain.schema.runnable import RunnableLambda
 from langchain.callbacks import get_openai_callback
 
-app = FastAPI()
+app = FastAPI() 
 
 api_key = os.getenv("API_KEY")
 os.environ["OPENAI_API_KEY"] = api_key

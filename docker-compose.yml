@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  frontend:
+    platform: linux/arm64
+    image:
+      sodam-frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+    working_dir: /app
+    environment:
+      - VITE_BACKEND_URL=http://backend:8000  # 백엔드 API 호출 주소 설정
+
+  backend:
+    image:
+      sodam-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    env_file:
+      - .env  # .env 파일을 사용하여 환경 변수 설정
