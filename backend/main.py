@@ -77,10 +77,8 @@ def map_reduce(documents):
 
 @app.post("/upload/")
 async def show_novel(file : UploadFile = File(...)):
-    file_path = f"./temp/{file.filename}"  # 파일을 저장할 경로
-    os.makedirs(os.path.dirname(file_path), exist_ok=True)  # 디렉토리 생성
+    file_path = f"./temp/{file.filename}"
 
-    # 파일을 저장
     with open(file_path, "wb") as buffer:
         buffer.write(await file.read())
     
