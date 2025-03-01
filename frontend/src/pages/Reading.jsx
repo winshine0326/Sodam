@@ -3,10 +3,11 @@ import '../assets/css/reading.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
+import NovelContainer from '../components/Reading/NovelContainer';
 
 const Reading = ()=>{
     const [isLoading,setIsLoading] = useState(false);
-    const [novel, setNovel] = useState(null);
+    const [novel, setNovel] = useState({"filename":null,"content":null});
 
     const location = useLocation();
     const file = location.state?.file;
@@ -35,7 +36,7 @@ const Reading = ()=>{
     
     return(
         <>
-        {isLoading ? <Loading/> : <h1>gogo</h1>};
+        {isLoading ? <Loading/> : <NovelContainer novel={novel} />}
         </>
     )
 }
