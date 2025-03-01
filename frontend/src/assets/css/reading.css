@@ -69,5 +69,14 @@ body{
   }
   
 .novelMainContainer{
+    font-family: "WarhavenL";
+    letter-spacing: 0.05em;
+    padding: 20px 20px;
+    width: 30em;
+    height: 90vh;
     color:#ffffff;
+    margin: 3vh auto;
+    background-color: #263752c5;
+    border-radius: 10px;
+    filter: drop-shadow(5px 5px #0f1520c5);
 }
