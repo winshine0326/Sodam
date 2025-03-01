@@ -6,6 +6,7 @@ const UploadButtonAfter = ({ file })=>{
     const navigate = useNavigate();
 
     const handleFile = (e) => {
+        // console.log(file);
         navigate("/reading", { state : { file } })
         e.preventDefault();
         e.stopPropagation();
