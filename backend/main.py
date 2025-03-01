@@ -88,13 +88,12 @@ async def show_novel(file : UploadFile = File(...)):
     
     split_docs = text_splitter.split_documents(documents)
     
-    summary = map_reduce(split_docs)
-    print(summary)
+    novel = map_reduce(split_docs)
+    print(novel)
     
     os.remove(file_path)
     
     return {
         "filename": file.filename,
-        "content": "hello"
+        "content": novel,
     }
-    # return {"summary": summary}
