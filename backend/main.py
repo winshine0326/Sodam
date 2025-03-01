@@ -91,6 +91,8 @@ async def show_novel(file : UploadFile = File(...)):
     summary = map_reduce(split_docs)
     print(summary)
     
+    os.remove(file_path)
+    
     return {
         "filename": file.filename,
         "content": "hello"
