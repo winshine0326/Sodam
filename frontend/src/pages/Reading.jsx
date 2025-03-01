@@ -22,6 +22,8 @@ const Reading = ()=>{
                 headers: { "Content-Type": "multipart/form-data" }, 
             })
             console.log(response);
+            setNovel(response.data);
+            setIsLoading(false);
         } catch (error){
             console.log(error);
         }
@@ -33,7 +35,7 @@ const Reading = ()=>{
     
     return(
         <>
-        <Loading/>
+        {isLoading ? <Loading/> : <h1>gogo</h1>};
         </>
     )
 }
